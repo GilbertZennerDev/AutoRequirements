@@ -28,6 +28,5 @@ def fiximports():
 	savedcontent = "\n".join(imports)
 	open("requirements.txt", "w").write(savedcontent)
 	print("Created requirements.txt for:\n", savedcontent)
-	
-fiximports()
 
+if __name__ == "__main__": fiximports()
