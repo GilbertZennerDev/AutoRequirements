@@ -14,7 +14,6 @@ def loopfiles(imports=[]):
 		content = open(filename, 'r').read().splitlines()
 		content = [line for line in content if 'import' in line]
 		content = [line[:line.find('as')] if 'as' in line else line for line in content]
-		#imports += " ".join(content)
 	return " ".join(content)
 
 def fiximports():
