@@ -1,11 +1,13 @@
 🧠 AutoRequirements — Generate requirements.txt Automatically
 
-Tired of manually tracking dependencies in your Python projects?
-Meet AutoRequirements, a lightweight script that scans your .py files, detects all imports, and instantly generates a clean requirements.txt file — no fuss, no external tools. ⚡🐍
+Tired of manually tracking dependencies in Python projects?
+AutoRequirements is a minimal, zero-dependency Python script that scans your .py files, detects all imports, and generates a clean requirements.txt automatically.
+
+No external libraries, no messy parsing — just pure Python logic to save you time. ⚡🐍
 
 🚀 Features
 
-✅ Detects all import patterns:
+✅ Detects all import styles:
 
 import module
 
@@ -15,17 +17,18 @@ from module import *
 
 import module as alias
 
-from module import * as alias
+from module import * as alias (strips as)
 
-✅ Automatically removes aliases (as something) and duplicates
-✅ Works across multiple files
-✅ Pure Python — no dependencies
+✅ Automatically removes aliases, commas, and duplicates
+✅ Works across multiple files in a single run
+✅ Graceful error handling — won’t crash if a file can’t be read
+✅ Lightweight, fast, and easy to use
 
 💡 Usage
 
-1️⃣ Run the script with your .py files as arguments:
+1️⃣ Run the script with one or more Python files as arguments:
 
-python autoreq.py install file1.py file2.py file3.py
+python autoreq.py file1.py file2.py file3.py
 
 
 2️⃣ Instantly generate a requirements.txt:
@@ -48,9 +51,9 @@ from flask import *
 from requests import get as fetch
 
 
-After running:
+After running AutoRequirements:
 
-python autoreq.py install app.py
+python autoreq.py app.py utils.py
 
 
 Output (requirements.txt):
@@ -62,21 +65,22 @@ sys
 
 🧰 Requirements
 
-Just Python. Nothing else.
+Python 3.x
+
+No external libraries
 
 ❤️ Why You’ll Love It
 
 Zero configuration.
 
-No parsing overhead.
+Clean, human-readable output.
 
-Perfect for small scripts or quick automation projects.
+Perfect for solo projects, hackathons, or quick automation scripts.
 
-Minimalistic — in true Pythonic spirit.
+Pythonic, minimalistic, and easy to drop into any repo.
 
 👨‍💻 Author
 
-Built with ☕, patience, and a love for automation by @GilbertZennerDev
-.
+Created with ☕ and a love for automation by GilbertZennerDev
 
 “Because even your imports deserve automation.”
