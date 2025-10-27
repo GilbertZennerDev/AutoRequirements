@@ -6,21 +6,20 @@ from bla import * as bla2 (just cut out anything from 'as')
 """
 
 import sys
-import subprocess as sp
 
-def loopfiles(imports=[]):
-	filenames = [sys.argv[i] for i in range(2, len(sys.argv))]
+def loopfiles():
+	if len(sys.argv) < 2: print('Enter filenames as args!'); exit()
+	filenames = set(sys.argv[1:])
 	for filename in filenames:
-		content = open(filename, 'r').read().splitlines()
-		content = [line for line in content if 'import' in line]
-		content = [line[:line.find('as')] if 'as' in line else line for line in content]
+		try:
+			content = open(filename, 'r').read().splitlines()
+			content = [line for line in content if 'import' in line]
+			content = [line[:line.find('as')] if 'as' in line else line for line in content]
+		except Exception as e:
+			print(e); exit()
 	return " ".join(content)
 
 def fiximports():
-	if len(sys.argv) < 2:
-		print('Argument "show" or "install" required')
-		exit()
-	mode = sys.argv[1]
 	imports = loopfiles()
 	imports = [line.replace(',', '') for line in ''.join(imp for imp in imports).split()]
 	imports = [line.strip() for line in imports if line != 'import' and line != 'from' and line != '*']

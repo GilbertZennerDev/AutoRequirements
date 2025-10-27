@@ -1,7 +1,8 @@
-requests2
-bla3
-mod1
-mod2
-mod3
-requests
 bla
+mod3
+bla3
+autoreq
+mod1
+requests
+requests2
+mod2
