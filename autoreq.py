@@ -13,7 +13,8 @@ python_files = root.rglob('*.py')  # recursively find all .py files
 
 def loopfiles():
 	content = []
-	if len(sys.argv) < 2: filenames = Path('testfolder/').rglob('*.py')
+	if len(sys.argv) < 2: print("Give Folder in Args"); exit()
+	elif len(sys.argv) == 2: filenames = Path(sys.argv[1] + '/').rglob('*.py')
 	else: filenames = set(sys.argv[1:])
 	for filename in filenames:
 		try: content += open(filename, 'r').read().splitlines()
