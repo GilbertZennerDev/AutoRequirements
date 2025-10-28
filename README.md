@@ -2,6 +2,7 @@
 
 Tired of manually tracking dependencies in Python projects?
 AutoRequirements is a minimal, zero-dependency Python script that scans your .py files, detects all imports, and generates a clean requirements.txt automatically.
+How to use: "python3 autoreq.py folder" scans all python files in "folder" and its subdirectories. Fills all imports uniquely into the requirements.txt.
 
 No external libraries, no messy parsing — just pure Python logic to save you time. ⚡🐍
 
